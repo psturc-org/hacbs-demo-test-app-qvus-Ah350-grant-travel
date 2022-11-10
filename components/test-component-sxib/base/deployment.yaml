@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: test-component-sxib
     spec:
       containers:
-      - image: quay.io/psturc/test-images:770258d1db2b476f800e4a3f3ee73f9b
+      - image: quay.io/psturc/test-images@sha256:8634a21783bf26b3de745a7c8fc5b60b1c17f15f5212e11cfb3b5f116153f16a
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
