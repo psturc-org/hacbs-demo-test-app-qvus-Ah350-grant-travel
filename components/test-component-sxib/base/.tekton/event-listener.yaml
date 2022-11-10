@@ -1,0 +1,26 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: EventListener
+metadata:
+  annotations:
+    appstudio.openshift.io/application: hacbs-demo-test-app-qvus
+    appstudio.openshift.io/component: test-component-sxib
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: test-component-sxib
+  namespace: hacbs-e2e-phfm
+spec:
+  namespaceSelector: {}
+  resources: {}
+  serviceAccountName: pipeline
+  triggers:
+  - bindings:
+    - kind: ClusterTriggerBinding
+      ref: github-push
+    template:
+      ref: test-component-sxib
+status:
+  configuration:
+    generatedName: ""
